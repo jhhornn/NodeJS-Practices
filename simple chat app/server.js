@@ -10,8 +10,17 @@ const app = express();
 
 app.get('/chat', respondChat);
 app.get('/sse', respondSSE);
+app.get('/static/*', respondStatic)
 
 app.listen(port, () => console.log('Server listening on port ' + port));
+
+
+function respondStatic(req, res) {
+    const filename = `${__dirname}/public/${req.params[0]}`
+    fs.createReadStream(filename)
+        .on('error', () => respondNotFound(req, res))
+        .pipe(res);
+}
 
 
 function respondChat(req, res) {
@@ -22,7 +31,7 @@ function respondChat(req, res) {
 }
 
 function respondSSE(req, res) {
-    request.writeHead(200, {
+    res.writeHead(200, {
         'Content-Type': 'text/event-stream',
         'Connection': 'keep-alive'
     })
@@ -33,4 +42,9 @@ function respondSSE(req, res) {
     res.on('close', () => {
         chatEmitter.off('message', onMessage)
     })
+}
+
+function respondNotFound(req, res) {
+    res.writeHead(404, { 'Content-Type': 'text/plain' });
+    res.end('Not found');
 }
