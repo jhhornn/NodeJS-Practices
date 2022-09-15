@@ -5,6 +5,6 @@ new window.EventSource('/sse').onmessage = function (event) {
 window.FormData.addEventListener('submit', function (evt) {
     evt.preventDefault();
 
-    window.fetch(`/chat?message=${window.inout.value}`)
+    window.fetch(`/chat?message=${window.input.value}`)
     window.input.value = '';
 });
