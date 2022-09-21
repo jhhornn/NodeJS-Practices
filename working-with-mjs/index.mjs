@@ -1,6 +1,6 @@
 import { readFile } from 'fs/promises';
 
-let templates = await readFile(new URL('template.html', import.meta.url), 'utf-8')
+let template = await readFile(new URL('template.html', import.meta.url), 'utf-8')
 
 const data = {
     title: 'Learn Node.js',
