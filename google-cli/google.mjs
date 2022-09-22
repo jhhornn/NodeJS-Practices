@@ -1,12 +1,13 @@
-//#! /usr/bin/env node
+#! /usr/bin/env node
 import dotenv from 'dotenv';
 dotenv.config();
 
-import yargs from 'yargs';
 import open from 'open';
+import yargs from 'yargs';
 
 
 const { argv } = yargs(process.argv);
+
 
 const url = `https://www.google.com/search?q=${argv['_'].slice(2).join("+")}`;
 if (argv["_"].slice(2).length > 0) {
@@ -14,3 +15,5 @@ if (argv["_"].slice(2).length > 0) {
 }else{
     open('https://google.com')
 }
+
+
