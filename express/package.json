@@ -5,13 +5,16 @@
     "morgan": "^1.10.0",
     "nodemon": "^2.0.20"
   },
+  "devDependencies": {
+    "jest": "^29.0.3"
+  },
   "scripts": {
-    "start": "nodemon server.mjs"
+    "start": "nodemon server.mjs",
+    "test": "jest"
   },
   "name": "express",
   "version": "1.0.0",
   "main": "server.js",
-  "devDependencies": {},
   "keywords": [],
   "author": "",
   "license": "ISC",
