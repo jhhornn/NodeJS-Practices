@@ -49,6 +49,6 @@ function respondNotFound(req, res) {
     res.end('Not found');
 }
 
-function chatLog(){
-    
+function chatLog(req, res){
+
 }
