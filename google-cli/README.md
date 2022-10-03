@@ -1,4 +1,4 @@
-## How to use the google cli after installation
+## How to use the jhhornn-google-cli after installation
 
 To open the google search engine in your browser directly from your terminal, type `google` in your terminal.
 
