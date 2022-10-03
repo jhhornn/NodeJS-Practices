@@ -1,7 +1,4 @@
 #! /usr/bin/env node
-import dotenv from 'dotenv';
-dotenv.config();
-
 import open from 'open';
 import yargs from 'yargs';
 
